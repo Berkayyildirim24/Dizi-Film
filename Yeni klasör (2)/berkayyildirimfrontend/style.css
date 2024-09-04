@@ -1,0 +1,257 @@
+.body {
+    background-color: #212529;
+}
+
+/* Genel stil ayarları */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar ayarları */
+.navbar {
+    background-color: black;
+    margin-bottom: 20px; /* Navbar ile carousel arasındaki boşluk */
+}
+
+/* Carousel wrapper ayarları */
+.carousel-wrapper {
+    width: 100%;
+    max-width: 800px; /* Maksimum genişlik */
+    margin: 0 auto; /* Yatayda ortalamak için */
+    padding: 0 15px; /* Yanal boşluk eklemek için */
+}
+
+/* Carousel öğelerinin yükseklik ayarı */
+.carousel-inner img {
+    width: 100%;
+    height: auto;
+}
+
+/* Carousel caption ayarları */
+.carousel-caption {
+    bottom: 20px; /* Yazının alt kenardan uzaklığı */
+    background: rgba(0, 0, 0, 0.5); /* Yazının arka planı için yarı saydam siyah */
+    color: #fff; /* Yazının rengi */
+    padding: 10px; /* Yazının etrafındaki boşluk */
+}
+
+/* Görsel boyutları */
+.card-img-top {
+    width: 100%;
+    height: 250px; /* Görselin yüksekliğini belirleyin */
+    object-fit: cover;
+}
+
+/* Yeni Eklenenler Görsel Boyutları */
+.new-card {
+    height: 200px; /* Yeni Eklenenler kart yüksekliği */
+}
+
+/* Kart İçerik Ayarları */
+.card {
+    background-color: transparent; /* Kartın arka planını saydam yap */
+    border: none; /* Kartın kenarlıklarını kaldır */
+    position: relative; /* IMDb puan butonları için pozisyonlama */
+}
+
+.card-body {
+    background-color: transparent; /* Kartın iç arka planını saydam yap */
+    color: #fff; /* Kart yazı rengini beyaz yap */
+    padding: 10px;
+}
+
+.card-title {
+    color: #fff; /* Kart başlık rengini beyaz yap */
+}
+
+/* IMDb Puan Butonları */
+.imdb-rating {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Buton arka planını yarı saydam yap */
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+/* Navbar */
+.navbar {
+    padding: 0.5rem 1rem; /* Navbar içindeki padding */
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white; 
+    font-size: 1.125rem;
+    font-weight: bold; 
+}
+
+.navbar-dark .navbar-brand {
+    color: white; 
+    font-size: 1.25rem; /* Sayfa isminin yazı boyutu */
+    font-weight: bold; /* Sayfa isminin kalınlığı */
+}
+
+.navbar-dark .navbar-brand img {
+    margin-right: 0.5rem; /* Logo ile sayfa ismi arasındaki boşluk */
+}
+
+.navbar-nav .nav-link {
+    padding: 0.5rem 1rem; /* Menü öğelerinin iç paddingi */
+}
+
+.navbar-nav .nav-link.active {
+    font-weight: bold; /* Aktif bağlantının kalın yazı stili */
+}
+
+.navbar-toggler-icon.custom-toggler-icon {
+    background-image: url('img/iconlar/menuicon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+}
+
+.nav-link.btn-login {
+    color: #28a745; 
+    font-weight: bold; /* Yazı kalınlığı */
+}
+
+.nav-link.btn-login:hover {
+    text-decoration: underline; /* Hover durumunda altı çizili */
+}
+
+/* Yeni Eklenenler Bölümü */
+.new-arrivals {
+    margin-top: 50px; /* Üstten boşluk ekler */
+}
+.new-arrivals-title {
+    color: aliceblue; /* Başlık rengi */
+    margin-bottom: 20px; /* Alt boşluk */
+}
+
+/* En Çok İzlenenler Bölümü */
+.popular-shows {
+    padding: 15px;
+    margin-top: 20px;
+    margin-left: 20px; /* Sol boşluk ekler */
+}
+
+.popular-shows .card {
+    margin-bottom: 15px;
+}
+
+/* Responsive ayarlar */
+@media (max-width: 767px) {
+    .carousel-wrapper {
+        padding: 0 10px; /* Mobilde daha az padding */
+    }
+
+    .carousel-caption {
+        font-size: 14px; /* Mobilde daha küçük yazı */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .carousel-wrapper {
+        padding: 0 15px; /* Tabletler için uygun padding */
+    }
+
+    .carousel-caption {
+        font-size: 16px; /* Tabletlerde uygun yazı boyutu */
+    }
+}
+
+@media (min-width: 1025px) {
+    .carousel-wrapper {
+        padding: 0 20px; /* Masaüstü için daha geniş padding */
+    }
+
+    .carousel-caption {
+        font-size: 18px; /* Masaüstü için uygun yazı boyutu */
+    }
+
+}
+
+body {
+    background-color: #121212;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.form-container {
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.form-group input {
+    background-color: #2a2a2a;
+    color: white;
+}
+
+.btn-custom {
+    background-color: #0ed12e;
+    border: none;
+}
+
+.btn-custom:hover {
+    background-color: #d62828;
+}
+
+.link-custom {
+    color: #e63946;
+}
+
+.link-custom:hover {
+    color: #d62828;
+}
+
+
+/* Kaydet Butonu Stili */
+.move-button {
+    background-color: #d11f19; /* Sarı arka plan rengi */
+    color: black; /* Yazı rengi siyah */
+    
+}
+
+.move-button:hover {
+    background-color: #e0a800; /* Hover durumunda biraz daha koyu sarı */
+    transform: scale(1.03); /* Hover durumunda hafif büyüme efekti */
+}
+
+.move-button:active {
+    background-color: #c69500; /* Butona basıldığında daha koyu sarı */
+    transform: scale(0.97); /* Basıldığında hafif küçülme efekti */
+}
+
+
+
+
+
+
+
+/* Footer ayarları */
+footer {
+    background-color: #212529;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

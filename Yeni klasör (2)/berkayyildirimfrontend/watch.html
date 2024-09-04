@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Dizi Sayfası</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+      /* Sayfa içeriğini tam yükseklikte tut ve footer'ı alta sabitle */
+      html, body {
+          height: 100%;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+      }
+      
+      body {
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh;
+      }
+      
+      main {
+          flex: 1;
+      }
+
+      footer {
+          position: relative;
+          bottom: 0;
+          width: 100%;
+      }
+    </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center ms-4" href="index.html">
+            <img src="img/iconlar/cinema.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
+            <span class="ms-2">Dizitent.com</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">Ana Sayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Diziler.html">Diziler</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Filmler.html">Filmler</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Animeler.html">Animeler</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile.html" style="margin-right: 20px; color: yellowgreen;">
+                        Profil <i class="fas fa-user"></i>
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" style="background-color: crimson;" href="login.html" id="logoutButton">Çıkış</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<main>
+  <center><h1 class="mt-5">THE WALKİNG DEAD</h1></center> 
+  <center>
+      <div id="videoContainer" class="mt-5">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/sfAc2U20uyg?si=KWWajKVUpPVbH7sS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+  </center>
+
+  <div class="container mt-3">
+    <center><h2>Sezonlar</h2></center>  
+      <div id="accordion">
+        <div class="card">
+          <div class="card-header">
+          
+            <center>
+              <a class="btn text-light" data-bs-toggle="collapse" href="#collapseOne">Birinci Sezon</a>
+            </center>    
+          </div>
+          <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
+            <div class="card-body">
+              <center>
+                <div class="">
+                  <button id="s1e1" class="btn btn-danger mb-3 mt-3 col-sm-1"> <a href="#" class="text-light">Ep 01</a></button>
+                  <button id="s1e2" class="btn btn-danger mb-3 mt-3 col-sm-1"> <a href="#" class="text-light">Ep 02</a></button>
+                  <button id="s1e3" class="btn btn-danger mb-3 mt-3 col-sm-1"> <a href="#" class="text-light">Ep 03</a></button>
+                  <button id="s1e4" class="btn btn-danger mb-3 mt-3 col-sm-1"> <a href="#" class="text-light">Ep 04</a></button>
+                  <button id="s1e5" class="btn btn-danger mb-3 mt-3 col-sm-1"> <a href="#" class="text-light">Ep 05</a></button>
+                  <button id="s1e6" class="btn btn-danger mb-3 mt-3 col-sm-1"> <a href="#" class="text-light">Ep 06</a></button>
+                </div>
+              </center>
+            </div>
+          </div>
+        </div>
+     
+        <div class="card">
+          <div class="card-header">
+            <center>
+              <a class="btn btn text-light" data-bs-toggle="collapse" href="#collapseTwo">İkinci Sezon</a>
+            </center>    
+          </div>
+          <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
+            <div class="card-body">
+              <center>
+                <div class="">
+                  <button id="s2e1" class="btn btn-danger mb-3 mt-3 col-sm-1"> <a href="#" class="text-light">Ep 01</a></button>
+                  <button id="s2e2" class="btn btn-danger mb-3 mt-3 col-sm-1"> <a href="#" class="text-light">Ep 02</a></button>
+                  <button id="s2e3" class="btn btn-danger mb-3 mt-3 col-sm-1"> <a href="#" class="text-light">Ep 03</a></button>
+                  <button id="s2e4" class="btn btn-danger mb-3 mt-3 col-sm-1"> <a href="#" class="text-light">Ep 04</a></button>
+                  <button id="s2e5" class="btn btn-danger mb-3 mt-3 col-sm-1"> <a href="#" class="text-light">Ep 05</a></button>
+                  <button id="s2e6" class="btn btn-danger mb-3 mt-3 col-sm-1"> <a href="#" class="text-light">Ep 06</a></button>
+                </div>
+              </center>
+            </div>
+          </div>
+        </div>
+
+        <div class="container mt-5" style="max-width: 600px; margin: 0 auto;">
+          <h3 class="text-center">Yorumlar</h3>
+          <div class="form-group mt-3">
+              <label for="comment" class="form-label">Yorumunuzu Yazın:</label>
+              <textarea class="form-control" id="comment" rows="3" placeholder="Yorumunuzu buraya yazın..." style="resize: none;"></textarea>
+              <div class="text-center">
+                  <button class="btn btn-danger mt-3">Yorum Yap</button>
+              </div>
+          </div>
+      </div>
+      
+
+      </div>
+  </div>
+</main>
+
+<footer class="bg-dark text-light text-center mt-5">
+  
+  <p>
+      <a href="index.html">Ana Sayfa</a> |
+      <a href="https://www.instagram.com/dizi.tent?igsh=N29xMG5xZXV5NHgx">Hakkımızda</a>
+      <p class="mb-0">© 2024 Web Sitem. Tüm Hakları Saklıdır </p>
+  </p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function() {
+        // 1. Bölüm butonuna tıklama olayı
+        $('#s1e1').click(function() {
+            $('#videoContainer').html(`
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sfAc2U20uyg?si=KWWajKVUpPVbH7sS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>            `);
+        });
+
+    
+        $('#s1e2').click(function() {
+            $('#videoContainer').html(`
+<iframe width="560" height="315" src="https://www.youtube.com/embed/o-L1mMZ31hM?si=uMjxTUlEVLsFWe8a" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>            `);
+        });
+
+     
+        $('#s1e3').click(function() {
+            $('#videoContainer').html(`
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_LrhrW5-Afs?si=HxZGtqlC0ekhhxkB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>            `);
+        });
+
+       
+        $('#s1e4').click(function() {
+            $('#videoContainer').html(`
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NXDosr9UryU?si=xvO8zD8WQshBcFtk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>            `);
+        });
+
+     
+        $('#s1e5').click(function() {
+            $('#videoContainer').html(`
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cKl61k4OCSI?si=C6zyOUbppOpLN0Em" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>            `);
+        });
+
+       
+        $('#s1e6').click(function() {
+            $('#videoContainer').html(`
+<iframe width="560" height="315" src="https://www.youtube.com/embed/B__2hnNQlEQ?si=GSu4Zo1Zhrtys9Hj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>            `);
+        });
+
+        // 2. Sezon Bölüm butonlarına tıklama olayları
+        $('#s2e1').click(function() {
+            $('#videoContainer').html(`
+           <iframe width="560" height="315" src="https://www.youtube.com/embed/sfAc2U20uyg?si=KWWajKVUpPVbH7sS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>            `);
+
+        });
+
+        $('#s2e2').click(function() {
+            $('#videoContainer').html(`
+<iframe width="560" height="315" src="https://www.youtube.com/embed/o-L1mMZ31hM?si=uMjxTUlEVLsFWe8a" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>            `);
+          
+        });
+
+        $('#s2e3').click(function() {
+            $('#videoContainer').html(`
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_LrhrW5-Afs?si=HxZGtqlC0ekhhxkB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>            `);
+         
+        });
+
+        $('#s2e4').click(function() {
+            $('#videoContainer').html(`
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NXDosr9UryU?si=xvO8zD8WQshBcFtk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>            `);
+          
+        });
+
+        $('#s2e5').click(function() {
+            $('#videoContainer').html(`
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cKl61k4OCSI?si=C6zyOUbppOpLN0Em" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>            `);
+          
+        });
+
+        $('#s2e6').click(function() {
+            $('#videoContainer').html(`
+<iframe width="560" height="315" src="https://www.youtube.com/embed/B__2hnNQlEQ?si=GSu4Zo1Zhrtys9Hj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>           
+       
+`);
+        });
+    });
+
+</script>
+
+</body>
+</html>

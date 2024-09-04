@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register & Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="firebaseauth.js"></script>
+
+    <style>
+
+        /* Kayıt Ol butonunu küçültme */
+        #signUpButton {
+            font-size: 12px; /* Yazı boyutunu küçült */
+            padding: 6px 12px; /* Butonun iç boşluklarını küçült */
+            width: auto; /* Genişliği içeriğe göre ayarla */
+            height: auto; /* Yüksekliği içeriğe göre ayarla */
+        }
+
+        /* Genel Stil Ayarları */
+        .custom-body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #212529, #212529);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .custom-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            transition: all 0.3s ease;
+            text-align: center; /* İmage ve başlığı ortalamak için */
+        }
+
+        .custom-container img {
+            width: 100px; /* Resim genişliği */
+            height: auto;
+            margin-bottom: 20px; /* Resim altına boşluk ekleme */
+        }
+
+        .custom-form-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .custom-input-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .custom-input-group i {
+            position: absolute;
+            top: 12px;
+            left: 10px;
+            color: #999;
+        }
+
+        .custom-input-group input {
+            width: calc(100% - 30px);
+            padding: 10px 10px 10px 30px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border 0.3s ease;
+        }
+
+        .custom-input-group input:focus {
+            border-color: #4facfe;
+            outline: none;
+        }
+
+        .custom-input-group label {
+            display: none;
+        }
+
+        .custom-btn {
+            width: 50%; /* Buton genişliğini yarıya indirdik */
+            padding: 12px;
+            background: linear-gradient(to right, #ff416c, #ff4b2b); /* Gradient arka plan */
+            border: none;
+            border-radius: 30px; /* Daha yuvarlak kenarlar */
+            color: #fff;
+            font-size: 18px; /* Biraz daha büyük yazı */
+            font-weight: bold; /* Kalın yazı */
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Hafif gölge efekti */
+            transition: all 0.3s ease;
+            margin: 0 auto; /* Butonun merkezi hizalanması */
+            display: block; /* Butonun blok olarak gösterilmesi */
+        }
+
+        .custom-btn:hover {
+            background: linear-gradient(to right, #ff4b2b, #ff416c); /* Hover durumunda renk değişimi */
+            transform: translateY(-3px); /* Hover durumunda yukarı kayma efekti */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Hover durumunda daha büyük gölge */
+        }
+
+        .custom-or {
+            text-align: center;
+            margin: 20px 0;
+            color: #999;
+            font-weight: bold; /* Daha belirgin hale getirmek için */
+            margin-top: 10px; /* Üstten boşluk ekledik */
+            margin-bottom: 10px; /* Alttan boşluk ekledik */
+        }
+
+        .custom-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .custom-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .custom-recover {
+            text-align: right;
+            margin-top: 10px;
+        }
+
+        .custom-message-div {
+            padding: 10px;
+            background: #ffdddd;
+            border: 1px solid #ff5c5c;
+            border-radius: 5px;
+            color: #ff5c5c;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body class="custom-body">
+    
+    <div class="custom-container" id="signup" style="display:none;">
+        
+        <img src="img/iconlar/cinema.png" alt="Cinema Icon" > 
+        <h4 class="custom-form-title">Kayıt Olmak İçin Lütfen Bilgilerinizi Eksiksiz Doldurun</h4>
+        <form method="post" action="">
+            <div id="signUpMessage" class="custom-message-div" style="display:none;"></div>
+            <div class="custom-input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" id="fName" placeholder="First Name" required>
+                <label for="fName">AD</label>
+            </div>
+            <div class="custom-input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" id="lName" placeholder="Last Name" required>
+                <label for="lName">SOYAD</label>
+            </div>
+            <div class="custom-input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="rEmail" placeholder="Email" required>
+                <label for="rEmail">EMAIL</label>
+            </div>
+            <div class="custom-input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="rPassword" placeholder="Password" required>
+                <label for="rPassword">ŞİFRE</label>
+            </div>
+            <button class="custom-btn" id="submitSignUp">KAYIT OL</button>
+        </form>
+        <p class="custom-or">ZATEN HESABIN VAR MI?</p>    
+       
+        <div class="custom-links">
+            <button id="signInButton" class="custom-btn">GİRİŞ YAP</button> <!-- GÜNCELLENDİ -->
+        </div>
+    </div>
+
+    <div class="custom-container" id="signIn">
+        <img src="img/iconlar/cinema.png" alt="Cinema Icon"> <!-- İmage eklendi -->
+        <h1 class="custom-form-title">GİRİŞ YAP</h1>
+        <form method="post" action="">
+            <div id="signInMessage" class="custom-message-div" style="display:none;"></div>
+            <div class="custom-input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="email" placeholder="EMAIL" required>
+                <label for="email">EMAIL</label>
+            </div>
+            <div class="custom-input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" placeholder="SIFRE" required>
+                <label for="password">ŞIFRE</label>
+            </div>
+            <p class="custom-recover ">
+                <a href="#">Sifremi Unuttum</a>
+            </p>
+            <button class="custom-btn " id="submitSignIn">GIRIS YAP</button>
+        </form>
+        
+        
+        <div class="custom-links">
+            <p class="custom-or" >VEYA</p>
+            <button id="signUpButton" class="custom-btn">KAYIT OL</button> 
+        </div>
+    </div>
+    <script src="script.js"></script>
+    
+</body>
+</html>
